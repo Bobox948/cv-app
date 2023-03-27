@@ -51,9 +51,9 @@ addHeader(e) {
 
   },    
   () => {
-    document.querySelector('.Name').innerHTML = "Name : "+this.state.headers[this.state.headers.length-1].name
-    document.querySelector('.Email').innerHTML = "Email : "+this.state.headers[this.state.headers.length-1].email
-    document.querySelector('.Phone').innerHTML = "Phone : "+this.state.headers[this.state.headers.length-1].phone
+    document.querySelector('.Name').innerHTML = "<b>Name : </b>"+this.state.headers[this.state.headers.length-1].name
+    document.querySelector('.Email').innerHTML = "<b>Email : </b>"+this.state.headers[this.state.headers.length-1].email
+    document.querySelector('.Phone').innerHTML = "<b>Phone : </b>"+this.state.headers[this.state.headers.length-1].phone
   
   
   }
