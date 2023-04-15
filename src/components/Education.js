@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 // import Overview from "./Overview";
 
+
+// for comments, see the Experience.js class component, it's the same code 
+
 class Education extends Component {
   constructor() {
     super();
@@ -67,20 +70,6 @@ addEducation(e) {
 
 
 }
-
-/* delTask(e) {
-  e.preventDefault()
-
-  var array = this.state.tasks
-  var index = e.target.id -1
-
-  array.splice(index, 1)
-
-  this.setState({
-    tasks: [...this.state.tasks]
-  });
-
-} */
 
 openEducation(e) {
   e.preventDefault()

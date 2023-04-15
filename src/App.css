@@ -31,7 +31,7 @@ h2{
   border-bottom: solid;
 }
 
-.header{
+.header{ /* all of the above display : none are that way by default but onclick in the app they appear */
 
   display : none
 }

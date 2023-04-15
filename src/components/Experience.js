@@ -8,11 +8,11 @@ class Experience extends Component {
   
 
   this.state = {
-    experience: [],
-    count: 0
+    experience: [], // the experience array that will be populated with the objects (inputs)
+    count: 0 // for the unique ids, we could have used uniqid library
   };
 
-  this.addExperience = this.addExperience.bind(this);
+  this.addExperience = this.addExperience.bind(this); // this is mandatory in clas components, not in functional components
   this.edExperience = this.edExperience.bind(this);
   this.openExperience = this.openExperience.bind(this);
   this.subedExperience  = this.subedExperience.bind(this);
@@ -27,20 +27,19 @@ addExperience (e) {
 
 
 
-   var name = document.getElementById('name3').value
+   var name = document.getElementById('name3').value // values of the fields
 
-   console.log(name.length)
   
    var year = document.getElementById('year2').value
 
    var place = document.getElementById('place2').value
 
    
-  if (name.length > 0 && year.length > 0 && place.length > 0)
+  if (name.length > 0 && year.length > 0 && place.length > 0) // if the fields are not empty
 
   { this.setState({
     experience: [...this.state.experience, {'id':'b'+this.state.count, 'year': year, 'name': name, 'place': place}],
-    count: this.state.count + 1
+    count: this.state.count + 1 // incrementing the count by one so the id is unique each time, and putting a " b " before for the query selector to work
     
 
   },    
@@ -54,7 +53,7 @@ addExperience (e) {
 
 
 
-  document.getElementById('year2').value = ""
+  document.getElementById('year2').value = "" // after input, reset the fields
   document.getElementById('name3').value = ""
 
   document.getElementById('place2').value = ""
@@ -67,19 +66,6 @@ addExperience (e) {
 
 }
 
-/* delTask(e) {
-  e.preventDefault()
-
-  var array = this.state.tasks
-  var index = e.target.id -1
-
-  array.splice(index, 1)
-
-  this.setState({
-    tasks: [...this.state.tasks]
-  });
-
-} */
 
 openExperience (e) {
   e.preventDefault()
@@ -103,10 +89,10 @@ edExperience (e) {
 
 
 
-  for (let i=0; i<this.state.experience.length; i++)
+  for (let i=0; i<this.state.experience.length; i++) // near each line of experience, edit button is available
   {
   
-  var value = document.querySelector(`#b${i}`).innerHTML
+  var value = document.querySelector(`#b${i}`).innerHTML 
 
   document.querySelector(`#b${i}`).outerHTML= `<input type="text" class="finalinput2" id="b${i}" value="${value}"><br>`
   
@@ -126,14 +112,14 @@ edExperience (e) {
 
 
 
-subedExperience (e){
+subedExperience (e){ // submit edit
   e.preventDefault()
 
 
-  for (let i=0; i<this.state.experience.length; i++)
+  for (let i=0; i<this.state.experience.length; i++) 
   {
   
-  var value2 = document.querySelector(`#b${i}`).value
+  var value2 = document.querySelector(`#b${i}`).value // retrieving the name, the year and the place with regex out of the innerhtml value
 
   let pattern1 = /^(\d{4})/
 
@@ -171,7 +157,7 @@ this.setState(state);
 
 
 
-  for (let j=0; j<this.state.experience.length; j++)
+  for (let j=0; j<this.state.experience.length; j++) // updating the display
   {
   
   var value = document.querySelector(`#b${j}`).value
@@ -220,7 +206,7 @@ this.setState(state);
 
       
         <div className='center'>
-        {this.state.experience.map(d => <p key={d.id} className="list2" id={d.id}>{d.year} - {d.name} - {d.place}</p>)}
+        {this.state.experience.map(d => <p key={d.id} className="list2" id={d.id}>{d.year} - {d.name} - {d.place}</p>)} {/* listing all the objects of the experience array */}
         </div>
 
       

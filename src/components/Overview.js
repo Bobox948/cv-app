@@ -3,12 +3,12 @@ import Header from './Header';
 import Education  from './Education';
 import Experience from './Experience';
 
-  const Overview = (props) => {
+  const Overview = () => { // This function is the overview render of the web app
   return (
     <div>
-      <Header /* Ajoutez vos props ici */ />
-      <Education /* Ajoutez vos props ici */ />
-      <Experience /* Ajoutez vos props ici */ />
+      <Header /> 
+      <Education />
+      <Experience />
     </div>
   );
 };

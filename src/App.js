@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import Overview from './components/Overview';
 
-import html2pdf from 'html2pdf.js';
+import html2pdf from 'html2pdf.js'; // library for pdf export
 
-const generatePDF = () => {
+const generatePDF = () => { // pdf generator
 
   const elements = document.querySelectorAll('button, input[type="submit"], input[type="file"]');
 
@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <button onClick={generatePDF}>Generate PDF</button>
       <div id="content-to-pdf">
-        { <Overview />}
+        { <Overview />} {/* the overview component that renders all the components */}
       </div>
      
     </div>
